@@ -1,0 +1,79 @@
+<html>
+<head>
+<style>
+
+.div1{
+font-family:verdana;
+font-size:18;
+font-style:underline;
+border: 1px solid black;
+padding: 20px;
+background-color:lightblue;
+width:500px;
+text-align: right;
+margin: 0 auto;
+}
+
+.div2{
+font-family:verdana;
+font-size:20;
+font-style:underline;
+border: 1px solid black;
+padding: 30px;
+background-color:lightblue;
+width:400px;
+text-align: left;
+margin: 0 auto;
+}
+
+h1   {color: black;font-family:verdana;}
+h3   {color: black;font-family:verdana;text-align: center;}
+p    {color: black;font-family:verdana;text-align: left;}
+select {font-size:16;}
+
+</style>
+</head>
+<body>
+
+<form action="{{url_for('predict')}}" method="POST">
+
+<div class=div1>
+
+<h1><center>Enter Patient Detail</center></h1>
+
+<div class=div2>
+<p>Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="age"></p>
+
+<p>Sex: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="sex">
+  <option value="M">Male</option>
+  <option value="F">Female</option>
+</select>
+</p>
+
+<p>BP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="bp">
+  <option value="HIGH">High</option>
+  <option value="NORMAL">Normal</option>
+  <option value="LOW">Low</option>
+</select>
+</p>
+
+<p>Cholesterol:
+<select name="ch">
+  <option value="HIGH">High</option>
+  <option value="NORMAL">Normal</option>
+</select>
+</p>
+<p>Na_to_K: &nbsp;&nbsp;&nbsp;
+<input type="text" name="na"></p>
+
+<p align=center><button type="submit"><h3>Predict Drug</h3></button></p>
+</div>
+<br>
+<p><h3>{{drug}}</h3></p>
+</div>
+</form>
+</body>
+</html>
